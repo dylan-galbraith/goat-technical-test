@@ -1,1 +1,103 @@
+$primary-color: white;
+$secondary-color: #569FD3;
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: $primary-color;
+}
+
+.app {
+  background-color: #012641;
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  padding-top: 2rem ;
+  height: 90vh;
+
+  &__hero {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 90vh;
+  }
+
+  &__quotes {
+    position: absolute;
+    left: 7rem;
+    top: 7rem;
+  }
+
+  &__breadcrumbs {
+    position: absolute;
+    padding-left: 7rem;
+    font-size: 0.8rem;
+  }
+}
+
+.hero {
+  padding-top: 7rem;
+  position: absolute;
+  z-index: 10;
+  width: 58%;
+  padding-left: 7rem;
+
+  &__label {
+    color: $secondary-color;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  &__heading {
+    font-size: 3.4rem;
+    padding: 2rem 0;
+    font-family: 'Volkhov', serif;
+  }
+}
+
+.student {
+  width: 20rem;
+
+  &__name {
+    color: #CDE3F2;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__study {
+    color: #CDE3F2;
+    font-weight: 0.8rem;
+  }
+}
+
+.footer {
+  border-top: 1px solid $secondary-color;
+  display: flex;
+  padding: 2rem 7rem;
+  justify-content: space-between;
+
+  &__card {
+    &__label {
+      color: #569FD3;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    &__text {
+      font-family: 'Volkhov', serif;
+      font-size: 1.3rem;
+      padding: 1rem 0;
+    }
+  }
+}
