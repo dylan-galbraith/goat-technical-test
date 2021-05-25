@@ -1,5 +1,20 @@
+// Variables
 $primary-color: #38503F;
 $secondary-color: #E5E8D6;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Breakpoints
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+      @content;
+  } 
+}
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+      @content;
+  }
+}
 
 html {
   box-sizing: border-box;
@@ -21,7 +36,13 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 10rem;
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 2rem;
+  }
+  @include desktop {
+    padding: 2rem 10rem;
+  }
 
   &__heading {
     color: $primary-color;
@@ -37,6 +58,7 @@ html {
 }
 
 .featured {
+  width: 100%;
 
   &__label {
     font-size: 1.25rem;
@@ -46,21 +68,39 @@ html {
 
   &__card {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 40rem;  
+    @include tablet {
+      flex-direction: row;
+      height: auto;  
+    }
   }
 
   &__image {
-    width: 50%;
     background-image: url('./assets/images/image-1.png');
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 20rem;
+    width: 100%;
+    @include tablet {
+      width: 50%;
+      height: auto;
+    }
   }
 
   &__bio {
-    width: 50%;
+    width: 100%;
     background-color: $primary-color;
-    padding: 4rem;
+    padding: 1rem;
+    @include tablet {
+      padding: 4rem;
+      width: 50%;
+    }
   }
 
   &__button {
@@ -79,12 +119,15 @@ html {
 }
 
 .card {
-  width: 32%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 40rem;
   padding-bottom: 1.5rem;
   position: relative;
+  @include tablet {
+    width: 32%;
+  }
 
   &__display {
     width: 100%;
@@ -152,19 +195,27 @@ html {
 
   &__list {
     display: flex;
+    flex-direction: column;
     list-style: none;
-    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      justify-content: space-between;
+      flex-direction: row;
+    }
   }
 
   &__item {
     text-decoration: none;
-    padding: 2rem;
+    padding: 1rem;
     color: $primary-color;
     font-size: 1.5rem;
     &:hover {
       font-weight: bolder;
       text-decoration: underline;
       cursor: pointer;    
+    }
+    @include desktop {
+      padding: 2rem;
     }
   }
 }
